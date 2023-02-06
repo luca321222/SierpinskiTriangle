@@ -9,11 +9,15 @@ public void draw()
 }
 public void sierpinski(int x, int y, int len) 
 {
-  if (len > 0)
+  if (len < 0.5)
   {
     triangle(x, y, x + len/2, y - len, x + len, y);
-    sierpinski(x, y , len/2);
+  }
+  else
+  {
+    triangle(x, y, x + len/2, y - len, x + len, y);
+    sierpinski(x, y, len/2);
     sierpinski(x + len, y, len/2);
-    sierpinski(x + len/2, y - len, len/2);
+    sierpinski(x + len/2, y - len, len/2); 
   }
 }
